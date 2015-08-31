@@ -26,6 +26,6 @@ add_action('slab_init', 'slab_view_init');
 // Init
 function slab_view_init($slab) {
 
-	$slab->autoloader->registerNamespace('Slab\\View', SLAB_VIEW_DIR . 'src');
+	$slab->autoloader->registerNamespace('Slab\View', SLAB_VIEW_DIR . 'src');
 
 }
