@@ -44,6 +44,10 @@ class ViewFactory {
 
 		$file = $this->finder->findFile($name);
 
+		if(!$file) {
+			throw new InvalidArgumentException("View not found: $name");
+		}
+
 		return new PhpView($file, $data);
 
 	}
