@@ -34,7 +34,7 @@ function slab_view_default_locations($views) {
 	$child_theme = get_stylesheet_directory();
 	$parent_theme = get_template_directory();
 
-	$view->addDirectory($child_theme);
+	$views->addDirectory($child_theme);
 
 	if($child_theme !== $parent_theme) {
 		$views->addDirectory($parent_theme);
