@@ -5,12 +5,12 @@ namespace Slab\View;
 use InvalidArgumentException;
 
 /**
- * File View
+ * PHP Template View
  *
  * @package default
  * @author Luke Lanchester
  **/
-class FileView implements ViewInterface {
+class PhpView implements ViewInterface {
 
 
 	/**

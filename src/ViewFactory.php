@@ -44,7 +44,7 @@ class ViewFactory {
 
 		$file = $this->finder->findFile($name);
 
-		return new FileView($file, $data);
+		return new PhpView($file, $data);
 
 	}
 
