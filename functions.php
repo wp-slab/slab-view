@@ -31,7 +31,13 @@ function slab_view_init($slab) {
  **/
 function slab_view_default_locations($views) {
 
-	// @todo parent theme support
-	$views->addDirectory(get_template_directory());
+	$child_theme = get_stylesheet_directory();
+	$parent_theme = get_template_directory();
+
+	$view->addDirectory($child_theme);
+
+	if($child_theme !== $parent_theme) {
+		$views->addDirectory($parent_theme);
+	}
 
 }
