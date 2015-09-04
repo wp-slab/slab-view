@@ -5,6 +5,7 @@ namespace Slab\View;
 /**
  * Initialize Slab View
  *
+ * @param Slab\Core\Application
  * @return void
  **/
 function slab_view_init($slab) {
