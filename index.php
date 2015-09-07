@@ -35,8 +35,8 @@ add_action('slab_view_directories', 'Slab\View\slab_view_default_locations');
  * @param array View data
  * @return Slab\View\ViewInterface
  **/
-function view($name, array $data = null) {
-
-	return slab('view')->make($name, $data);
-
+if(!function_exists('view')) {
+	function view($name, array $data = null) {
+		return slab('view')->make($name, $data);
+	}
 }
