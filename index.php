@@ -26,3 +26,17 @@ include SLAB_VIEW_DIR . 'functions.php';
 // Hooks
 add_action('slab_init', 'Slab\View\slab_view_init');
 add_action('slab_view_directories', 'Slab\View\slab_view_default_locations');
+
+
+/**
+ * Global view() method
+ *
+ * @param string View name
+ * @param array View data
+ * @return Slab\View\ViewInterface
+ **/
+function view($name, array $data = null) {
+
+	return slab('view')->make($name, $data);
+
+}
