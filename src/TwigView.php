@@ -10,7 +10,7 @@ use InvalidArgumentException;
  * @package default
  * @author Luke Lanchester
  **/
-class TwigView implements ViewInterface {
+class TwigView extends BaseView {
 
 
 	/**
@@ -108,19 +108,6 @@ class TwigView implements ViewInterface {
 		include $this->file;
 
 		return ob_get_clean();
-
-	}
-
-
-
-	/**
-	 * Output view
-	 *
-	 * @return void
-	 **/
-	public function serve() {
-
-		echo $this->render();
 
 	}
 
