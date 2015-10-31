@@ -81,14 +81,17 @@ class ViewFinder {
 
 		$dirs = $this->directories[$prefix];
 
+		$filenames = ['twig' => "$name.twig", 'php' => "$name.php"];
+
 		foreach($dirs as $dir) {
+			foreach($filenames as $engine => $filename) {
 
-			$file = "$dir/$name.php";
+				$file = "$dir/$filename";
+				if(is_file($file)) {
+					return $this->_files[$name] = [$file, $engine];
+				}
 
-			if(is_file($file)) {
-				return $this->_files[$name] = $file;
 			}
-
 		}
 
 		return $this->_files[$name] = null;

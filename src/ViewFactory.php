@@ -42,13 +42,19 @@ class ViewFactory {
 	 **/
 	public function make($name, array $data = null) {
 
-		$file = $this->finder->findFile($name);
+		$result = $this->finder->findFile($name);
 
-		if(!$file) {
+		if(!$result) {
 			throw new InvalidArgumentException("View not found: $name");
 		}
 
-		return new PhpView($file, $data);
+		list($file, $engine) = $result;
+
+		if($engine === 'twig') {
+			return new TwigView($file, $data);
+		} else {
+			return new PhpView($file, $data);
+		}
 
 	}
 
