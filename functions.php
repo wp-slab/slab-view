@@ -10,7 +10,7 @@ namespace Slab\View;
  **/
 function slab_view_init($slab) {
 
-	$slab->autoloader->registerNamespace('Slab\View', SLAB_VIEW_DIR . 'src');
+	// $slab->autoloader->registerNamespace('Slab\View', SLAB_VIEW_DIR . 'src');
 
 	$slab->singleton('Slab\View\ViewFactory', function($slab){
 		$finder = $slab->make('Slab\View\ViewFinder');
